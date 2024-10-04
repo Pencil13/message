@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
-  const firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyCxxa7HUSf4HsRoTl5t72kPQ9MCfDC3rKw",
     authDomain: "message-30f97.firebaseapp.com",
     projectId: "message-30f97",
@@ -9,7 +9,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/fireba
   };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // Get a reference to the Firebase Realtime Database
 const database = firebase.database();
