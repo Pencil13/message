@@ -34,38 +34,35 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/fireba
     });
 }
 
-// Function to send a message
 function sendMessage() {
     const messageInput = document.getElementById('messageInput');
     const messageText = messageInput.value.trim();
 
+    console.log('Sending message:', messageText); // Debug
+
     if (messageText !== '') {
+        // Push the message to Firebase database
         const newMessageRef = database.ref('messages').push();
         newMessageRef.set({
             text: messageText,
             sent: true
+        }).then(() => {
+            console.log('Message sent successfully!');
+            messageInput.value = ''; // Clear input field after sending
+        }).catch((error) => {
+            console.error('Error sending message:', error); // Debug error
         });
-        messageInput.value = ''; // Clear input
+    } else {
+        console.log('No message text entered.'); // Debug empty input
     }
-}
-
-// Function to delete the chat (clear messages from Firebase)
-function deleteChat() {
-    database.ref('messages').remove(); // Clear messages from Firebase
 }
 
 // Event listener for the send button
 document.getElementById('sendButton').addEventListener('click', sendMessage);
 
-// Event listener for the Enter/Return key
+// Event listener for the "Enter" key on the message input field
 document.getElementById('messageInput').addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' || e.keyCode === 13) {
         sendMessage();
     }
 });
-
-// Event listener for the delete chat button
-document.getElementById('deleteChatButton').addEventListener('click', deleteChat);
-
-// Load messages on page load
-loadMessages();
