@@ -9,7 +9,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/fireba
   };
 
   const app = initializeApp(firebaseConfig);
-  const database = firebase.database();
 
   function loadMessages() {
     const messagesContainer = document.getElementById('messagesContainer');
