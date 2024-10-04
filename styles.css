@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    width: 400px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    height: 300px;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.message.sent {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.message.received {
+    background-color: #f1f1f1;
+    color: black;
+    align-self: flex-start;
+}
+
+.input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.input-container button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-container button:hover {
+    background-color: #0056b3;
+}
+
+.delete-container {
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.delete-container button {
+    padding: 10px;
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-container button:hover {
+    background-color: #e43d3d;
+}
